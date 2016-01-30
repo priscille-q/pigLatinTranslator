@@ -1,9 +1,5 @@
 <?php
-namespace priscille-q/pigLatinTranslator/Tests;
-
-use priscille-q/pigLatinTranslator/Model;
-
-class LatinAlphabetTest extends PHPUnit_Framework_testCase
+class LatinAlphabetTest extends PHPUnit_Framework_TestCase
 {
 	public function testConstructor()
 	{
@@ -166,22 +162,39 @@ class LatinAlphabetTest extends PHPUnit_Framework_testCase
 
 
 
-	public function testReturnTypeForGetConsonantList();
-	// {
-	// 	$witness = '';
-	// 	$latinAlphabet = new LatinAlphabet();
-	// 	$result = $latinAlphabet->GetConsonantList();
-	// 	$this->assertEquals($result, $witness);
-	// }
-	public function testReturnValueForGetConsonantList();
+	public function testReturnTypeForGetConsonantList()
+	{
+		// $witness = '';
+		// $latinAlphabet = new LatinAlphabet();
+		// $result = $latinAlphabet->GetConsonantList();
+		// $this->assertEquals($result, $witness);
+		$this->markTestIncomplete(
+          'testReturnTypeForGetConsonantList need to be done.'
+        );
+	}
+	public function testReturnValueForGetConsonantList()
+	{
+		$this->markTestIncomplete(
+          'testReturnValueForGetConsonantList need to be done.'
+        );
+	}
 
-	public function testReturnTypeForGetVowelList();
-	// {
-	// 	$witness = 'aeiou';
-	// 	$latinAlphabet = new LatinAlphabet();
-	// 	$result = $latinAlphabet->GetVowelList();
-	// 	$this->assertEquals($result, $witness);
-	// }
-	public function testReturnValueForGetVowelList();
+	public function testReturnTypeForGetVowelList()
+	{
+		// $witness = 'aeiou';
+		// $latinAlphabet = new LatinAlphabet();
+		// $result = $latinAlphabet->GetVowelList();
+		// $this->assertEquals($result, $witness);
+		$this->markTestIncomplete(
+          'testReturnTypeForGetVowelList need to be done.'
+        );
+	}
+
+	public function testReturnValueForGetVowelList()
+	{
+		$this->markTestIncomplete(
+          'testReturnValueForGetVowelList need to be done.'
+        );
+	}
 
 }
