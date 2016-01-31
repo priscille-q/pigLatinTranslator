@@ -9,5 +9,10 @@
             "email": "arka.darell@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
 }
