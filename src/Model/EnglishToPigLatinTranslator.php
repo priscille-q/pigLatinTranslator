@@ -17,7 +17,7 @@ class EnglishToPigLatinTranslator implements TranslatorInterface
 		{
 			return '';
 		}
-		//verifier le debut du mot vior si il y a quelque chose avant la permiere lettre
+
 		if ($this->parser->isBeginByVowel($word))
 		{
 			return $this->wordBeginingByVowelTranslation($word);

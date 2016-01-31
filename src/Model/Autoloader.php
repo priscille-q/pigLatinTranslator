@@ -1,5 +1,5 @@
 <?php
-namespace priscille_q\pigLatinTranslator;
+namespace priscille_q\pigLatinTranslator\Model;
 require_once __DIR__ .'/AutoloaderInterface.php';
 
 use priscille_q\pigLatinTranslator\AutoloaderInterface;
@@ -16,7 +16,7 @@ class Autoloader implements AutoloaderInterface
 		if (strpos($modelName, __NAMESPACE__ . '\\') === 0)
 		{
 			$modelName = str_replace(__NAMESPACE__ . '\\', '', $modelName);
-			require 'Model/' . $modelName . 'php';
+			require 'Model/' . $modelName . '.php';
 		}
 	}
 }

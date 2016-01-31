@@ -1,5 +1,5 @@
 <?php
-use priscille_q\pigLatinTranslator\Autoloader;
+use priscille_q\pigLatinTranslator\Model\Autoloader;
 use priscille_q\pigLatinTranslator\Model\Parser;
 require_once __DIR__ .'/../src/Model/Autoloader.php';
 
