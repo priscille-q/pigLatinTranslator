@@ -12,7 +12,6 @@ class Parser implements ParserInterface
 			return false;
 		}
 		return preg_match('/^['. self::VOWEL .']{1}/i', $word);
-
 	}
 
 	public function getPositionFirstVowel($word)
@@ -22,5 +21,14 @@ class Parser implements ParserInterface
 			return false;
 		}
 		return strcspn(strtolower($word), self::VOWEL);
+	}
+
+	public function isBeginByConsonant($word)
+	{
+		if (!isset($word) || empty($word))
+		{
+			return false;
+		}
+		return preg_match('/^['. self::VOWEL .']{0}/i', $word);
 	}
 }
