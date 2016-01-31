@@ -33,18 +33,22 @@ class ParserTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($result, false);
 	}
 
+	/**
+	 * @expectedException InvalidArgumentException
+	 */
 	public function testEmptyStringAsParameterForIsBeginByVowel()
 	{
 		$parser = new Parser();
 		$result = $parser->isBeginByVowel('');
-		$this->assertEquals($result, false);
 	}
 
+	/**
+	 * @expectedException InvalidArgumentException
+	 */
 	public function testNullAsParameterForIsBeginByVowel()
 	{
 		$parser = new Parser();
 		$result = $parser->isBeginByVowel(null);
-		$this->assertEquals($result, false);
 	}
 
 	public function testVowelUpperCaseForIsBeginByVowel()
@@ -75,12 +79,13 @@ class ParserTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($result, false);
 	}
 
-
+	/**
+	 * @expectedException InvalidArgumentException
+	 */
 	public function testNumberAsParameterForGetPositionFirstVowel()
 	{
 		$parser = new Parser();
 		$result = $parser->getPositionFirstVowel(42);
-		$this->assertEquals($result, false);
 	}
 
 	public function testSpecialCharacterAsParameterForGetPositionFirstVowel()
@@ -99,13 +104,18 @@ class ParserTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($result, strlen($word));
 	}
 
+	/**
+	 * @expectedException InvalidArgumentException
+	 */
 	public function testEmptyStringAsParameterForGetPositionFirstVowel()
 	{
 		$parser = new Parser();
 		$result = $parser->getPositionFirstVowel('');
-		$this->assertEquals($result, false);
 	}
 
+	/**
+	 * @expectedException InvalidArgumentException
+	 */
 	public function testNullAsParameterForGetPositionFirstVowel()
 	{
 		$parser = new Parser();

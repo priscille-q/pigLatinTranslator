@@ -9,7 +9,7 @@ class Parser implements ParserInterface
 	{
 		if (!isset($word) || empty($word))
 		{
-			return false;
+			throw new \InvalidArgumentException('Missing argument, waiting for a string');
 		}
 		return preg_match('/^['. self::VOWEL .']{1}/i', $word);
 	}
@@ -18,7 +18,7 @@ class Parser implements ParserInterface
 	{
 		if (!isset($word) || empty($word) || !is_string($word))
 		{
-			return false;
+			throw new \InvalidArgumentException('Invalid word, it must be a string, got :' . var_export($word, true));
 		}
 		return strcspn(strtolower($word), self::VOWEL);
 	}
@@ -27,7 +27,7 @@ class Parser implements ParserInterface
 	{
 		if (!isset($word) || empty($word))
 		{
-			return false;
+			throw new \InvalidArgumentException('Missing argument, waiting for a string');
 		}
 		return preg_match('/^['. self::VOWEL .']{0}/i', $word);
 	}

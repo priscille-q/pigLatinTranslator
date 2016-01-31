@@ -23,14 +23,22 @@ if (empty($sentences))
 }
 $translator = new EnglishToPigLatinTranslator(new Parser());
 
-foreach ($sentences as $sentence) {
-	$words = explode(' ', $sentence);
-	$numberOfWord = count($words);
+try
+{
+	foreach ($sentences as $sentence) {
+		$words = explode(' ', $sentence);
+		$numberOfWord = count($words);
 
-	for ($counter = 0; $counter < $numberOfWord; $counter++) {
-		$words[$counter] = $translator->translate($words[$counter]);
+		for ($counter = 0; $counter < $numberOfWord; $counter++) {
+			$words[$counter] = $translator->translate($words[$counter]);
+		}
+		$translatedSentence = implode(' ', $words);
+		echo $translatedSentence . "\n";
 	}
-	$translatedSentence = implode(' ', $words);
-	echo $translatedSentence . "\n";
+}
+catch (InvalidArgumentException $e)
+{
+	echo 'Caught exception: ',  $e->getMessage(), "\n";
+	exit(0);
 }
  ?>
