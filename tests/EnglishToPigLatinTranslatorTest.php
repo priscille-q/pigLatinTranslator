@@ -1,11 +1,6 @@
 <?php
-use priscille_q\pigLatinTranslator\Model\Autoloader;
 use priscille_q\pigLatinTranslator\Model\Parser;
 use priscille_q\pigLatinTranslator\Model\EnglishToPigLatinTranslator;
-
-require_once __DIR__ .'/../src/Model/Autoloader.php';
-
-Autoloader::autoloadregister();
 
 class EnglishToPigLatinTranslatorTest extends PHPUnit_Framework_TestCase
 {
