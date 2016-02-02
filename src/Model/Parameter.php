@@ -13,7 +13,7 @@ class Parameter
 		$array = array_shift($parameter);
 		if (!isset($parameter['0']))
 		{
-			throw new \Exception("Usage: php index.php 'Sentence to translate' 'Another sentence to translate' ...");
+			throw new \Exception(__FILE__.':'.__LINE__.": Usage: php index.php 'Sentence to translate' 'Another sentence to translate' ...");
 		}
 		return $parameter;
 	}

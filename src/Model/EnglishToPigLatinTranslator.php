@@ -17,17 +17,27 @@ class EnglishToPigLatinTranslator implements TranslatorInterface
 		{
 			return '';
 		}
-
+		$punctuation = '';
+		if(preg_match('/[' . Parser::PUNCTUATION . ']{1}$/', $word))
+		{
+			$size = strlen($word);
+			$punctuation = substr($word, $size - 1, $size);
+			$word = substr($word, 0, $size - 1);
+		}
+		if(empty($word))
+		{
+			$punctuation;
+		}
 		if ($this->parser->isBeginByVowel($word))
 		{
-			return $this->wordBeginingByVowelTranslation($word);
+			$word = $this->wordBeginingByVowelTranslation($word);
 		}
 		elseif ($this->parser->isBeginByConsonant($word))
 		{
-			return $this->wordBeginingByConsonantTranslation($word);
+			$word = $this->wordBeginingByConsonantTranslation($word);
 		}
 
-		return $word;
+		return $word . $punctuation;
 	}
 
 	protected function wordBeginingByVowelTranslation($word)
@@ -43,10 +53,6 @@ class EnglishToPigLatinTranslator implements TranslatorInterface
 
 	protected function checkWord(&$word)
 	{
-		if (!isset($word))
-		{
-			return false;
-		}
 		$word = trim($word);
 		if (empty($word))
 		{
